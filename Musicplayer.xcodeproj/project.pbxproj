@@ -13,6 +13,8 @@
 		57F62288243527A0008D23AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F62286243527A0008D23AA /* Main.storyboard */; };
 		57F6228A243527A2008D23AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F62289243527A2008D23AA /* Assets.xcassets */; };
 		57F6228D243527A2008D23AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F6228B243527A2008D23AA /* LaunchScreen.storyboard */; };
+		57F6229824352809008D23AA /* MANILAGREY-Timezones.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 57F6229524352807008D23AA /* MANILAGREY-Timezones.mp4 */; };
+		57F6229B24352D62008D23AA /* album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F6229A24352D62008D23AA /* album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		57F62289243527A2008D23AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57F6228C243527A2008D23AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57F6228E243527A2008D23AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57F6229524352807008D23AA /* MANILAGREY-Timezones.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MANILAGREY-Timezones.mp4"; sourceTree = "<group>"; };
+		57F6229A24352D62008D23AA /* album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +62,10 @@
 			children = (
 				57F62280243527A0008D23AA /* AppDelegate.swift */,
 				57F62282243527A0008D23AA /* SceneDelegate.swift */,
+				57F6229524352807008D23AA /* MANILAGREY-Timezones.mp4 */,
 				57F62284243527A0008D23AA /* ViewController.swift */,
 				57F62286243527A0008D23AA /* Main.storyboard */,
+				57F6229A24352D62008D23AA /* album.swift */,
 				57F62289243527A2008D23AA /* Assets.xcassets */,
 				57F6228B243527A2008D23AA /* LaunchScreen.storyboard */,
 				57F6228E243527A2008D23AA /* Info.plist */,
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F6229824352809008D23AA /* MANILAGREY-Timezones.mp4 in Resources */,
 				57F6228D243527A2008D23AA /* LaunchScreen.storyboard in Resources */,
 				57F6228A243527A2008D23AA /* Assets.xcassets in Resources */,
 				57F62288243527A0008D23AA /* Main.storyboard in Resources */,
@@ -141,6 +148,7 @@
 				57F62285243527A0008D23AA /* ViewController.swift in Sources */,
 				57F62281243527A0008D23AA /* AppDelegate.swift in Sources */,
 				57F62283243527A0008D23AA /* SceneDelegate.swift in Sources */,
+				57F6229B24352D62008D23AA /* album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
