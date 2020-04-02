@@ -12,4 +12,5 @@ struct album {
     let albumImage: String
     let songName: String
     let singerName: String
+    let song: String
 }

@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     var playIndex = 0
     
-    var songArray = [album(albumImage: "timezones.jpg", songName: "Timezones", singerName: "Manila Grey"), album(albumImage: "silverskies.jpg", songName: "Silver Skies", singerName: "Manila Grey"), album(albumImage: "youthwater.jpg", songName: "Youth Water", singerName: "Manila Grey")]
+    var songArray = [album(albumImage: "timezones.jpg", songName: "Timezones", singerName: "Manila Grey", song: "MANILAGREY-Timezones"), album(albumImage: "silverskies.jpg", songName: "Silver Skies", singerName: "Manila Grey", song: "MANILAGREY-SilverSkies"), album(albumImage: "youthwater.jpg", songName: "Youth Water", singerName: "Manila Grey", song: "MANILAGREY-YouthWater")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +46,12 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func AcBackButton(_ sender: UIButton) {
+    @IBAction func backButton(_ sender: UIButton) {
         playIndex = playIndex - 1
         playSong()
     }
     
-    @IBAction func AcNextButton(_ sender: UIButton) {
+    @IBAction func nextButton(_ sender: UIButton) {
         playIndex = playIndex + 1
         playSong()
     }
@@ -60,9 +60,9 @@ class ViewController: UIViewController {
         let seconds = Int64(songSlider.value)
         let targetTime:CMTime = CMTimeMake(value: seconds, timescale: 1)
         player.seek(to: targetTime)
-        CurrentTime()
+        currentTime()
         updatePlayer()
-        player.replaceCurrentItem(with: playerItem)
+        
     }
     
     
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
             songnameLabel.text = songArray[playIndex].songName
             singernameLabel.text = songArray[playIndex].singerName
 
-            let fileUrl = Bundle.main.url(forResource: songArray[playIndex].songName, withExtension: "mp4")
+            let fileUrl = Bundle.main.url(forResource: songArray[playIndex].song, withExtension: "mp4")
             playerItem = AVPlayerItem(url: fileUrl!)
             player.replaceCurrentItem(with: playerItem)
             looper = AVPlayerLooper(player: player, templateItem: playerItem!)
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func CurrentTime() {
+    func currentTime() {
         player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 1), queue: DispatchQueue.main, using: { (CMTime) in
             if self.player.currentItem?.status == .readyToPlay {
                 let currentTime = CMTimeGetSeconds(self.player.currentTime())

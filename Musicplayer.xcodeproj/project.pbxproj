@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		578346D224362F4F00BA279B /* MANILAGREY-YouthWater.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 578346D124362F4F00BA279B /* MANILAGREY-YouthWater.mp4 */; };
+		578346D424362F5C00BA279B /* MANILAGREY-SilverSkies.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 578346D324362F5C00BA279B /* MANILAGREY-SilverSkies.mp4 */; };
 		57F62281243527A0008D23AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F62280243527A0008D23AA /* AppDelegate.swift */; };
 		57F62283243527A0008D23AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F62282243527A0008D23AA /* SceneDelegate.swift */; };
 		57F62285243527A0008D23AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F62284243527A0008D23AA /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		578346D124362F4F00BA279B /* MANILAGREY-YouthWater.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MANILAGREY-YouthWater.mp4"; sourceTree = "<group>"; };
+		578346D324362F5C00BA279B /* MANILAGREY-SilverSkies.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MANILAGREY-SilverSkies.mp4"; sourceTree = "<group>"; };
 		57F6227D243527A0008D23AA /* Musicplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicplayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F62280243527A0008D23AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57F62282243527A0008D23AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 			children = (
 				57F62280243527A0008D23AA /* AppDelegate.swift */,
 				57F62282243527A0008D23AA /* SceneDelegate.swift */,
+				578346D324362F5C00BA279B /* MANILAGREY-SilverSkies.mp4 */,
+				578346D124362F4F00BA279B /* MANILAGREY-YouthWater.mp4 */,
 				57F6229524352807008D23AA /* MANILAGREY-Timezones.mp4 */,
 				57F62284243527A0008D23AA /* ViewController.swift */,
 				57F62286243527A0008D23AA /* Main.storyboard */,
@@ -133,6 +139,8 @@
 			files = (
 				57F6229824352809008D23AA /* MANILAGREY-Timezones.mp4 in Resources */,
 				57F6228D243527A2008D23AA /* LaunchScreen.storyboard in Resources */,
+				578346D224362F4F00BA279B /* MANILAGREY-YouthWater.mp4 in Resources */,
+				578346D424362F5C00BA279B /* MANILAGREY-SilverSkies.mp4 in Resources */,
 				57F6228A243527A2008D23AA /* Assets.xcassets in Resources */,
 				57F62288243527A0008D23AA /* Main.storyboard in Resources */,
 			);
