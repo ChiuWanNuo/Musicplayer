@@ -31,11 +31,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         playSong()
+        currentTime()
+        updatePlayer()
         
     }
     
     @IBAction func playerButton(_ sender: UIButton) {
-        player.replaceCurrentItem(with: playerItem)
+        
         if player.rate == 0 {
             playerButton.setImage(UIImage(named: "pause.png"), for: .normal)
             player.play()
