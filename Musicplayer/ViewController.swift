@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         updatePlayer()
         
     }
-    
+    //play and pause
     @IBAction func playerButton(_ sender: UIButton) {
         
         if player.rate == 0 {
@@ -77,21 +77,25 @@ class ViewController: UIViewController {
             albumImage.image = UIImage(named: songArray[playIndex].albumImage)
             songnameLabel.text = songArray[playIndex].songName
             singernameLabel.text = songArray[playIndex].singerName
-
+            //download file, get location on the moblie app
             let fileUrl = Bundle.main.url(forResource: songArray[playIndex].song, withExtension: "mp4")
+            //bulid play item
             playerItem = AVPlayerItem(url: fileUrl!)
+            //remove current play item in case replay same song
+            player.removeAllItems()
+            //play current item
             player.replaceCurrentItem(with: playerItem)
             looper = AVPlayerLooper(player: player, templateItem: playerItem!)
-            
+            //reset slider
             songSlider.setValue(Float(0), animated: true)
             let targetTime:CMTime = CMTimeMake(value: Int64(0), timescale: 1)
+            player.seek(to: targetTime)
             
             player.play()
             
-            let duration : CMTime = playerItem!.asset.duration
-            let seconds : Float64 = CMTimeGetSeconds(duration)
-            songSlider.minimumValue = 0
-            songSlider.maximumValue = Float(seconds)
+            
+            //set button image when playing on beginning
+            playerButton.setImage(UIImage(named: "pause.png"), for: .normal)
             
         } else {
             playIndex = 0
@@ -99,6 +103,7 @@ class ViewController: UIViewController {
     }
     
     func currentTime() {
+        //run per sec
         player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 1), queue: DispatchQueue.main, using: { (CMTime) in
             if self.player.currentItem?.status == .readyToPlay {
                 let currentTime = CMTimeGetSeconds(self.player.currentTime())
@@ -108,12 +113,13 @@ class ViewController: UIViewController {
         })
     }
     
-    //計算顯示歌曲長度
+    //update slider time value
     func updatePlayer() {
         guard let duration = playerItem?.asset.duration else {
             return
         }
         let seconds = CMTimeGetSeconds(duration)
+        // show playing song total time on Label
         lengthLabel.text = formatConversion(time: seconds)
         songSlider.minimumValue = 0
         songSlider.maximumValue = Float(seconds)
