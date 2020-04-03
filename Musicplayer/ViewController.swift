@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         playIndex = playIndex + 1
         playSong()
     }
-    
+    //reset slider
     @IBAction func timeObserver(_ sender: UISlider) {
         let seconds = Int64(songSlider.value)
         let targetTime:CMTime = CMTimeMake(value: seconds, timescale: 1)
@@ -86,10 +86,6 @@ class ViewController: UIViewController {
             //play current item
             player.replaceCurrentItem(with: playerItem)
             looper = AVPlayerLooper(player: player, templateItem: playerItem!)
-            //reset slider
-            songSlider.setValue(Float(0), animated: true)
-            let targetTime:CMTime = CMTimeMake(value: Int64(0), timescale: 1)
-            player.seek(to: targetTime)
             
             player.play()
             
