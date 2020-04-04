@@ -51,11 +51,13 @@ class ViewController: UIViewController {
     @IBAction func backButton(_ sender: UIButton) {
         playIndex = playIndex - 1
         playSong()
+        updatePlayer()
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
         playIndex = playIndex + 1
         playSong()
+        updatePlayer()
     }
     //reset slider
     @IBAction func timeObserver(_ sender: UISlider) {
