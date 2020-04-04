@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         currentTime()
         updatePlayer()
         
+        
     }
     //play and pause
     @IBAction func playerButton(_ sender: UIButton) {
@@ -90,10 +91,15 @@ class ViewController: UIViewController {
             //looper = AVPlayerLooper(player: player, templateItem: playerItem!)
             
             player.play()
-            
-            
+
             //set button image when playing on beginning
             playerButton.setImage(UIImage(named: "pause.png"), for: .normal)
+            //play next song
+            NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: .main) { (_) in
+                self.playIndex = self.playIndex + 1
+                self.playSong()
+                self.updatePlayer()
+            }
             
         } else {
             playIndex = 0
