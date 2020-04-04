@@ -85,7 +85,7 @@ class ViewController: UIViewController {
             player.removeAllItems()
             //play current item
             player.replaceCurrentItem(with: playerItem)
-            looper = AVPlayerLooper(player: player, templateItem: playerItem!)
+            //looper = AVPlayerLooper(player: player, templateItem: playerItem!)
             
             player.play()
             
@@ -105,6 +105,8 @@ class ViewController: UIViewController {
                 let currentTime = CMTimeGetSeconds(self.player.currentTime())
                 self.songSlider.value = Float(currentTime)
                 self.currentLabel.text = self.formatConversion(time: currentTime)
+                self.lengthLabel.text = "-\(self.formatConversion(time: Float64(self.songSlider.maximumValue - self.songSlider.value)))"
+                
             }
         })
     }
@@ -119,7 +121,7 @@ class ViewController: UIViewController {
         lengthLabel.text = formatConversion(time: seconds)
         songSlider.minimumValue = 0
         songSlider.maximumValue = Float(seconds)
-        songSlider.isContinuous = true
+        
     }
     
     func formatConversion(time: Float64) -> String {
